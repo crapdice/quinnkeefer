@@ -3,8 +3,8 @@
     font-weight: bolder;
 }
 
-.container {
-	max-width: none !important;
+.sticky-nav .container {
+max-width: none;
 }
 
 .header_h1 {

@@ -8,3 +8,7 @@
 	font-size:26px !important;
 	text-align: center;
 }
+
+.nav-container {
+	max-width:none !important;
+}

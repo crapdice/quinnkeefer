@@ -5,6 +5,6 @@
 
 .header_h1 {
 
-	font-size:26px;
+	font-size:26px !important;
 	text-align: center;
 }

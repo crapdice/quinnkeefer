@@ -3,12 +3,17 @@
     font-weight: bolder;
 }
 
+.container {
+	max-width: none !important;
+}
+
 .header_h1 {
 
 	font-size:26px !important;
 	text-align: center;
 }
 
-.container {
-	max-width: none !important;
+.product-image {
+
+	border:1px solid #000;
 }

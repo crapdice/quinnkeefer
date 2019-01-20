@@ -28,7 +28,7 @@ body,html{margin:0;padding:0;}
   /* Needed for children to be absolutely positioned relative to the parent. */
   position: relative;
   /* The height of the container. Must be set, but it doesn't really matter what the value is. */
-  height: 100vh;
+  height: 120vh;
 
   /* For text formatting. */
   display: flex;
@@ -79,6 +79,11 @@ body,html{margin:0;padding:0;}
 .bg3::after {
   background-image: url('carousel.jpeg');
   background-position: right;
+}
+
+@media all and (max-width: 699px) and (min-width: 520px) {
+.bg2::after {
+  background-position: url('mask.jpeg');
 }
 
 </style>

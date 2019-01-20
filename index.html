@@ -11,51 +11,85 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/fnx-swoon.css" />
         <style>
-            img {
-                width:400px;
-                height:500px;
-            } 
-            
-            div {
-             width:500px;
-             margin:0px auto;
-            }
-            
-            p {
-                font-size: 24px;
-                font-family: Roboto;
-            }
-            
-            h1 {
-                width:500px;
-                font-size: 40px;
-            }      
-            
-            .rotate{
-                transform: rotate(90deg); 
-                width:500px;height:400px; 
-                padding: 50px 0;
-                margin-left: -50px;
-            }
-            
-            .wider {
-                height: 315px;
-            }
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+}
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  height: 100vh;
+
+  /* For text formatting. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */
+  z-index: -1;
+}
+
+/* The styling for the static div. */
+.static {
+ background-image: url('quinn.jpeg');
+}
+
+/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg1::after {
+  background-image: url('20190119_183108.jpg');
+}
+
+.bg2::after {
+  background-image: url('20171212_191707_1544993338159.jpeg');
+}
+
+.bg3::after {
+  background-image: url('20180916_172041_1544993337892.jpeg');
+}
 
         </style>
     </head>
     <body>
-        <div>
-        <h1>Quinn Keefer</h1>
-        <p>Hi I'm Quinn. And that's my toothbrush.</p>
-        <p><img src="quinn.jpeg" /></p>
-        <p>This is a website about me. Do you like my watch? It's my favorite.</p>
-        <p><img class="rotate" src="20190119_183108.jpg" /></p>
-        <p>What do you want to do when you grow up? I want to be a heart surgeon.</p>
-        <img src="20171212_191707_1544993338159.jpeg" />
-        <p>Yeehaw! I'm on the carousel at the country fair. Do you like the yellow horse the best too?</p>
-        <p><img class="wider" src="20180916_172041_1544993337892.jpeg" />
-        </div>
-      
+        <main class="wrapper">
+            <section class="section static">
+                <h1>Hi I'm Quinn Keefer. And that's my toothbrush.</h1>    
+            </section>      
+            <section class="section parallax bg1">
+                <h1>This is a website about me. Do you like my watch? It's my favorite.</h1>    
+            </section>                    
+            <section class="section parallax bg2">
+                <h1>What do you want to do when you grow up? I want to be a heart surgeon.</h1>
+            </section>            
+            <section class="section parallax bg3">
+                <h1>Yeehaw! I'm on the carousel at the country fair. Do you like the yellow horse the best too?</h1>
+            </section>            
+        </main>
     </body>
 </html> 

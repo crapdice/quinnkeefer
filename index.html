@@ -56,7 +56,7 @@ body,html{margin:0;padding:0;}
   transform: translateZ(-1px) scale(1.5);
   /* Force the background image to fill the whole element. */
   background-size: cover;
-      background-position: center;
+  background-position: center;
   /* Keep the image from overlapping sibling elements. */
   z-index: -1;
 }
@@ -81,9 +81,9 @@ body,html{margin:0;padding:0;}
   background-position: right;
 }
 
-@media all and (max-width: 699px) and (min-width: 520px) {
+@media all and (min-width: 600px) {
 .bg2::after {
-  background-position: url('mask.jpeg');
+  background-position: bottom;
 }
 
 </style>
